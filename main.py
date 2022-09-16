@@ -8,7 +8,7 @@ def main():
   # read input file
   with open(input_file) as f:
     data = ujson.load(f)['message']['knowledge_graph']
-  output = {'nodes': [], 'edges': []}
+  output = {'nodes': [], 'links': []}
   nodeIds: dict[str, int] = {}
   
   # assign nodes
@@ -25,7 +25,7 @@ def main():
   
   # assign edges
   for _, edgeData in data['edges'].items():
-    output['edges'].append(
+    output['links'].append(
       {
         "source": nodeIds[edgeData["subject"]],
         "target": nodeIds[edgeData["object"]],
