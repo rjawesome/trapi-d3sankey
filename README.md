@@ -1,6 +1,6 @@
 # trapi-d3sankey
 
-Input your TRAPI output in ``input.json`` such as
+Input your TRAPI output in the input file such as
 ```json
 {
    "message":{
@@ -58,7 +58,7 @@ Input your TRAPI output in ``input.json`` such as
 }
 ```
 
-The appropriate output that can be used in d3 sankey will come out in ``ouptut.json`` like such (source = subject & target = object)
+The appropriate output that can be used in d3 sankey will come out in STDOUT like such (source = subject & target = object)
 ```json
 {
     "nodes": [
@@ -77,4 +77,9 @@ The appropriate output that can be used in d3 sankey will come out in ``ouptut.j
         ...
     ]
 }
+```
+
+Run the command like such:
+```bash
+python3 main.py input.json
 ```

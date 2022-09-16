@@ -1,8 +1,12 @@
 import ujson
+import sys
 
 def main():
+  # get arguments
+  input_file = sys.argv[1]
+
   # read input file
-  with open("./input.json") as f:
+  with open(input_file) as f:
     data = ujson.load(f)['message']['knowledge_graph']
   output = {'nodes': [], 'edges': []}
   nodeIds: dict[str, int] = {}
@@ -29,9 +33,7 @@ def main():
       }
     )
 
-  # output to file
-  with open("./output.json", "w") as f:
-    ujson.dump(output, f, indent=2)
+  print(ujson.dumps(output, indent=2))
 
 if __name__ == '__main__':
   main()
